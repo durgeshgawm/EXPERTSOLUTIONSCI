@@ -1,0 +1,61 @@
+.toggle {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toggleTrack {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  transition: background 0.3s ease;
+}
+
+.toggleTrack.dark {
+  background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+}
+
+.sun {
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.moon {
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.toggleTrack.dark .moon {
+  color: #22D3EE;
+}
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggleTrack.dark .thumb {
+  transform: translateX(28px);
+  background: #0F172A;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}

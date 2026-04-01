@@ -1,0 +1,95 @@
+.partnersSection {
+  background: var(--bg-primary);
+  padding: 64px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.partnerCard {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.partnerCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.partnerCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.partnerIcon {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 10px;
+  background: var(--accent-gradient-subtle);
+  color: var(--accent-primary);
+  border-radius: var(--radius-md);
+}
+
+.partnerNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--border-color);
+  line-height: 1;
+}
+
+.partnerTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.partnerDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.partnerCardLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.partnerCard:hover .partnerCardLine {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .partnersGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .partnerCard {
+    padding: 24px;
+  }
+}
