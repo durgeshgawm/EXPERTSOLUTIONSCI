@@ -6,16 +6,15 @@ export const metadata = {
 };
 
 const industries = [
-  { icon: '🏭', name: 'Cement Industry', services: ['Laser alignment and thermography', 'Mechanical maintenance', 'Wear solutions', 'Dust emission curbing', 'Production optimization'] },
+  { icon: '🏭', name: 'Cement Industry', services: ['Industrial Installation', 'Mechanical maintenance', 'Wear solutions', 'Dust emission curbing', 'Production optimization'] },
   { icon: '⛏️', name: 'Mining Industry', services: ['Mechanical maintenance', 'Welding services', 'Repair and modernization', 'Process optimization', 'Quality control'] },
-  { icon: '⚡', name: 'Power Generation', services: ['Electrical maintenance', 'Energy audits', 'Energy optimization', 'Process enhancement', 'Laser alignment'] },
-  { icon: '🍽️', name: 'Food & Beverage', services: ['Quality control', 'Process optimization', 'Environment protection', 'Mechanical maintenance', 'In-situ services'] },
-  { icon: '🛢️', name: 'Oil & Gas', services: ['Welding services', 'Mechanical maintenance', 'Repair and modernization', 'Prompt services', 'In-situ services'] },
-  { icon: '🏗️', name: 'Manufacturing', services: ['Process enhancement', 'Production optimization', 'Quality control', 'Electrical maintenance', 'Wear solutions'] },
+  { icon: '🌱', name: 'Agri-Agro', services: ['Electrical maintenance', 'Energy audits', 'Energy optimization', 'Process enhancement', 'Industrial Installation'] },
+  { icon: '🚗', name: 'Automobiles', services: ['Quality control', 'Process optimization', 'Environment protection', 'Mechanical maintenance', 'In-situ services'] },
+  { icon: '🚢', name: 'Ports', services: ['Welding services', 'Mechanical maintenance', 'Repair and modernization', 'Prompt services', 'In-situ services'] },
 ];
 
 const allServices = [
-  'Laser alignment and thermography', 'Global supply-chain network', 'Energy audits',
+  'Industrial Installation', 'Grinding Media and Liners', 'Energy audits',
   'Mechanical maintenance', 'Electrical maintenance', 'Process optimization',
   'Quality control', 'Wear solutions', 'Process enhancement',
   'Energy optimization', 'Dust emission curbing', 'Environment protection',

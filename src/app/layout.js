@@ -2,15 +2,20 @@ import './globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata = {
   title: 'Expert Solutions CI - Quality Services & Products',
-  description: 'Expert Solutions CI provides quality industrial services including laser alignment, thermography, energy audits, mechanical and electrical maintenance, and process optimization.',
-  keywords: 'Expert Solutions CI, industrial services, laser alignment, energy audits, mechanical maintenance, Côte d\'Ivoire',
+  description: 'Expert Solutions CI provides quality industrial services including industrial installation, energy audits, mechanical and electrical maintenance, and process optimization.',
+  keywords: 'Expert Solutions CI, industrial services, industrial installation, energy audits, mechanical maintenance, Côte d\'Ivoire',
   openGraph: {
     title: 'Expert Solutions CI - Quality Services & Products',
     description: 'Your trusted partner for industrial maintenance, engineering solutions, and supply chain management.',
     type: 'website',
+  },
+  icons: {
+    icon: '/assets/logo.jpeg',
+    apple: '/assets/logo.jpeg',
   },
 };
 
@@ -25,6 +30,7 @@ export default function RootLayout({ children }) {
               {children}
             </main>
             <Footer />
+            <WhatsAppButton />
           </div>
         </ThemeProvider>
       </body>

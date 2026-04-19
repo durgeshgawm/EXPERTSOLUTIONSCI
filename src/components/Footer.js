@@ -10,33 +10,31 @@ const quickLinks = [
 
 const companyLinks = [
   { href: '/partners', label: 'Partners' },
-  { href: '/testimonials', label: 'Testimonials' },
+  // { href: '/testimonials', label: 'Testimonials' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
 
 const services = [
-  'Laser Alignment',
-  'Energy Audits',
-  'Mechanical Maintenance',
-  'Process Optimization',
+  'Industrial Instillation',
+  'Technical Audits',
+  'Process Optimisation',
+  'Maintenance Support',
 ];
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       {/* Here We Are Section */}
-      <div className={styles.mapSection}>
+      <div className={styles.mapSection} style={{ paddingBottom: '48px' }}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Here We Are</h2>
-          <p className={styles.sectionText}>
-            Our subsidiaries and representatives&apos; offices around the world.
-          </p>
-          <div className={styles.worldMap}>
+          <h2 className={styles.sectionTitle}>OUR OFFICES AROUND THE WORLD</h2>
+          
+          <div className={styles.worldMap} style={{ marginTop: '32px', marginBottom: '48px' }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508473.26604433521!2d-3.979665!3d5.348461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sen!2s!4v1"
               width="100%"
-              height="400"
+              height="350"
               style={{ border: 0, borderRadius: 'var(--radius-lg)' }}
               allowFullScreen=""
               loading="lazy"
@@ -45,13 +43,31 @@ export default function Footer() {
             />
           </div>
 
-          {/* Location Legend */}
-
+          <div>
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '24px' }}>Group Companies</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center' }}>
+              {[
+                { name: 'Expert Solutions CI', location: 'IVC' },
+                { name: 'Expert Transit & Transport', location: 'IVC' },
+                { name: 'Titan Afrique', location: 'IVC' },
+                { name: 'Expert Service & Solution', location: 'UAE' },
+                { name: 'ACE Solutions', location: 'India' },
+                { name: 'Elite & Smart Solutions Nigeria Limited', location: 'Nigeria' }
+              ].map((company) => (
+                <div key={company.name} style={{ background: 'var(--bg-card)', padding: '16px 24px', borderRadius: '8px', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', gap: '12px', minWidth: '240px', boxShadow: 'var(--shadow-sm)' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)', boxShadow: '0 0 8px var(--accent-primary)' }}/>
+                  <div style={{ textAlign: 'left' }}>
+                    <div style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.95rem' }}>{company.name}</div>
+                    <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{company.location}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-
-      {/* Find Us On Section */}
+      {/* Find Us On Section
       <div className={styles.socialSection}>
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Find Us On</h2>
@@ -77,6 +93,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      */}
 
       {/* Main Footer */}
       <div className={styles.mainFooter}>
@@ -84,16 +101,7 @@ export default function Footer() {
           <div className={styles.footerGrid}>
             <div className={styles.footerBrand}>
               <div className={styles.footerLogo}>
-                <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                  <rect width="40" height="40" rx="8" fill="url(#grad2)" />
-                  <path d="M12 14h16M12 20h12M12 26h8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-                  <defs>
-                    <linearGradient id="grad2" x1="0" y1="0" x2="40" y2="40">
-                      <stop stopColor="#0891B2" />
-                      <stop offset="1" stopColor="#22D3EE" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <img src="/assets/logo.jpeg" alt="ESCI Logo" width={44} height={44} style={{ objectFit: 'cover', borderRadius: '50%' }} />
                 <span>EXPERT SOLUTIONS CI</span>
               </div>
               <p className={styles.footerDesc}>
@@ -134,9 +142,7 @@ export default function Footer() {
             <div className={styles.footerBottomLinks}>
               <Link href="/contact">Contact Us</Link>
               <span>•</span>
-              <a href="mailto:admin@expertsolutionsci.com">admin@expertsolutionsci.com</a>
-              <span>•</span>
-              <a href="tel:0749951730">0749951730</a>
+              <a href="mailto:sales@expertsolutionsci.com">sales@expertsolutionsci.com</a>
             </div>
           </div>
         </div>

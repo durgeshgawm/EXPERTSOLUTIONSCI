@@ -2,25 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
 import styles from '@/styles/header.module.css';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Product/Services' },
   { href: '/industry-solutions', label: 'Industry Wise Solutions' },
+  { href: '/services', label: 'Product/Services' },
   { href: '/gallery', label: 'Photo Gallery' },
   { href: '/partners', label: 'Partners' },
-  { href: '/testimonials', label: 'Testimonials' },
+  // { href: '/testimonials', label: 'Testimonials' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/services?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsMobileMenuOpen(false);
+      setSearchQuery('');
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,16 +58,7 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <div className={styles.logoIcon}>
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-              <rect width="40" height="40" rx="8" fill="url(#grad1)" />
-              <path d="M12 14h16M12 20h12M12 26h8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-              <defs>
-                <linearGradient id="grad1" x1="0" y1="0" x2="40" y2="40">
-                  <stop stopColor="#0891B2" />
-                  <stop offset="1" stopColor="#22D3EE" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="/assets/logo.jpeg" alt="ESCI Logo" width={40} height={40} style={{ objectFit: 'cover', borderRadius: '50%' }} />
           </div>
           <div className={styles.logoText}>
             <span className={styles.logoTitle}>EXPERT SOLUTIONS</span>
@@ -71,15 +73,54 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
                 {pathname === link.href && <span className={styles.activeIndicator} />}
               </Link>
             ))}
           </div>
+          <div className={styles.mobileSearch}>
+            <form onSubmit={handleSearch} className={styles.searchForm}>
+              <div className={styles.searchContainer}>
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className={styles.searchInput}
+                />
+                <button type="submit" className={styles.searchButton} aria-label="Search">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
         </nav>
 
         <div className={styles.actions}>
+          <div className={styles.desktopSearch}>
+            <form onSubmit={handleSearch} className={styles.searchForm}>
+              <div className={styles.searchContainer}>
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className={styles.searchInput}
+                />
+                <button type="submit" className={styles.searchButton} aria-label="Search">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
           <ThemeToggle />
           <button
             className={`${styles.hamburger} ${isMobileMenuOpen ? styles.hamburgerOpen : ''}`}

@@ -5,32 +5,14 @@ export const metadata = {
   description: 'Our trusted partners and the comprehensive services we offer together.',
 };
 
-const services = [
-  {
-    icon: '⚙️',
-    title: 'Process Optimization',
-    desc: 'Process optimization and improvement',
-  },
-  {
-    icon: '🏗️',
-    title: 'System Design',
-    desc: 'System design and installation',
-  },
-  {
-    icon: '🔧',
-    title: 'Equipment Maintenance',
-    desc: 'Equipment maintenance and repair',
-  },
-  {
-    icon: '📦',
-    title: 'Supply Chain',
-    desc: 'Supply chain management and logistics',
-  },
-  {
-    icon: '💡',
-    title: 'Technical Support',
-    desc: 'Technical support and consulting',
-  },
+const partners = [
+  { icon: '🏢', title: 'HAPBCO', desc: 'Valued strategic partner' },
+  { icon: '🏭', title: 'Vega Industries', desc: 'Valued strategic partner' },
+  { icon: '🔧', title: 'Thermax', desc: 'Valued strategic partner' },
+  { icon: '⚙️', title: 'Spannkraft', desc: 'Valued strategic partner' },
+  { icon: '🤝', title: 'Mailam', desc: 'Valued strategic partner' },
+  { icon: '🏗️', title: 'Welter/NPM', desc: 'Valued strategic partner' },
+  { icon: '📦', title: 'APB', desc: 'Valued strategic partner' },
 ];
 
 const whyChooseUs = [
@@ -81,21 +63,21 @@ export default function PartnersPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2 className="section-title">
-              Our <span className="accent-text">Services</span>
+              Our <span className="accent-text">Partners</span>
             </h2>
             <p className="section-subtitle">
-              Industrial maintenance and supply solutions:
+              We collaborate with industry leading partners:
             </p>
           </div>
           <div className={styles.partnersGrid} style={{ marginBottom: '64px' }}>
-            {services.map((service, index) => (
+            {partners.map((partner, index) => (
               <div key={index} className={styles.partnerCard}>
                 <div className={styles.partnerCardHeader}>
-                  <span className={styles.partnerIcon}>{service.icon}</span>
+                  <span className={styles.partnerIcon}>{partner.icon}</span>
                   <span className={styles.partnerNumber}>0{index + 1}</span>
                 </div>
-                <h3 className={styles.partnerTitle}>{service.title}</h3>
-                <p className={styles.partnerDesc}>{service.desc}</p>
+                <h3 className={styles.partnerTitle}>{partner.title}</h3>
+                <p className={styles.partnerDesc}>{partner.desc}</p>
                 <div className={styles.partnerCardLine}/>
               </div>
             ))}

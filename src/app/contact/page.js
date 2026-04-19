@@ -84,32 +84,18 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
-                <div className={styles.formRow}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="phone" className={styles.label}>Phone</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className={styles.input}
-                      placeholder="Your phone number"
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="subject" className={styles.label}>Subject</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className={styles.input}
-                      placeholder="Message subject"
-                      required
-                    />
-                  </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="subject" className={styles.label}>Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="Message subject"
+                    required
+                  />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="message" className={styles.label}>Message</label>
@@ -169,17 +155,13 @@ export default function ContactPage() {
                   Get In Touch
                 </h3>
                 <div className={styles.contactDetails}>
-                  <a href="tel:0749951730" className={styles.contactItem}>
-                    <span className={styles.contactLabel}>Phone</span>
-                    <span className={styles.contactValue}>0749951730</span>
-                  </a>
-                  <a href="mailto:admin@expertsolutionsci.com" className={styles.contactItem}>
+                  <a href="mailto:sales@expertsolutionsci.com" className={styles.contactItem}>
                     <span className={styles.contactLabel}>Email</span>
-                    <span className={styles.contactValue}>admin@expertsolutionsci.com</span>
+                    <span className={styles.contactValue}>sales@expertsolutionsci.com</span>
                   </a>
                 </div>
                 <p className={styles.bookingNote}>
-                  Call or email to book an appointment
+                  Email us to book an appointment
                 </p>
               </div>
 

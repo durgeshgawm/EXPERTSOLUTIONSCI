@@ -53,7 +53,7 @@ const whyChooseUs = [
 ];
 
 const stats = [
-  { number: '18+', label: 'Services Offered' },
+  { number: '10+', label: 'African Nations' },
   { number: '100+', label: 'Projects Completed' },
   { number: '50+', label: 'Happy Clients' },
   { number: '24/7', label: 'Support Available' },
@@ -85,22 +85,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroBackground}>
-          <div className={styles.heroBgPattern} />
-          <div className={styles.heroGradient} />
-          <div className={styles.heroOrb1} />
-          <div className={styles.heroOrb2} />
-          <div className={styles.heroOrb3} />
+          <div className={styles.heroSlider}>
+            <div className={`${styles.heroSlide} ${styles.slide1}`} />
+            <div className={`${styles.heroSlide} ${styles.slide2}`} />
+            <div className={`${styles.heroSlide} ${styles.slide3}`} />
+          </div>
+          <div className={styles.heroOverlay} />
         </div>
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
             <span className={styles.heroBadgeDot} />
             Quality Services & Products
           </div>
-          <h1 className={styles.heroTitle}>
-            <span className={styles.heroTitleLine}>EXPERT</span>
-            <span className={styles.heroTitleLine}>
-              SOLUTIONS <span className={styles.heroAccent}>CI</span>
-            </span>
+          <h1 className={`${styles.heroTitle} ${styles.heroTitleBlue}`}>
+            EXPERT SOLUTIONS CI
           </h1>
           <p className={styles.heroSubtitle}>
             Need to speak with a specific Requirements? At Expert Solutions CI, our goal is to make your Business grow like a plant with Strong roots. We are a leading provider of industrial maintenance and supply solutions in Abidjan, Côte d'Ivoire.

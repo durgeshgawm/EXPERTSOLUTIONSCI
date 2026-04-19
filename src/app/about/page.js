@@ -6,8 +6,8 @@ export const metadata = {
 };
 
 const services = [
-  { icon: '🎯', title: 'Laser Alignment & Thermography', desc: 'We use the latest technology to ensure that your equipment is aligned and operating at peak efficiency.' },
-  { icon: '🌐', title: 'Global Supply-Chain Network', desc: 'We have a network of suppliers around the world, which allows us to source the highest quality products at competitive prices.' },
+  { icon: '🎯', title: 'Industrial Installation', desc: 'We use the latest technology to ensure that your equipment is correctly installed and operating at peak efficiency.' },
+  { icon: '🌐', title: 'Grinding Media and Liners', desc: 'We supply high quality grinding media and liners from specialized suppliers around the world.' },
   { icon: '🔧', title: 'Maintenance & Repair', desc: 'Our team of experts provides a wide range of maintenance and repair services for industrial equipment.' },
   { icon: '👥', title: 'Training & Support', desc: 'We offer training and support to our clients to help them get the most out of their equipment.' },
 ];
