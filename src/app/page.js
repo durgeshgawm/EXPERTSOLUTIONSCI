@@ -85,11 +85,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroBackground}>
-          <div className={styles.heroSlider}>
-            <div className={`${styles.heroSlide} ${styles.slide1}`} />
-            <div className={`${styles.heroSlide} ${styles.slide2}`} />
-            <div className={`${styles.heroSlide} ${styles.slide3}`} />
-          </div>
+          <div className={styles.heroBackgroundImage} />
           <div className={styles.heroOverlay} />
         </div>
         <div className={styles.heroContent}>

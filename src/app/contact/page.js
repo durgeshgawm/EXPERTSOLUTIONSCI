@@ -7,8 +7,8 @@ const hours = [
   { day: 'Monday', time: '9AM – 6PM' },
   { day: 'Tuesday', time: '9AM – 6PM' },
   { day: 'Wednesday', time: '9AM – 6PM' },
-  { day: 'Thursday', time: '9AM – 8PM' },
-  { day: 'Friday', time: '9AM – 8PM' },
+  { day: 'Thursday', time: '9AM – 6PM' },
+  { day: 'Friday', time: '9AM – 6PM' },
   { day: 'Saturday', time: '9AM – 6PM' },
   { day: 'Sunday', time: 'Closed' },
 ];
@@ -117,13 +117,13 @@ export default function ContactPage() {
                 >
                   {submitted ? (
                     <>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                       Message Sent!
                     </>
                   ) : (
                     <>
                       Send Message
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
                     </>
                   )}
                 </button>
@@ -135,7 +135,7 @@ export default function ContactPage() {
               {/* Hours */}
               <div className={styles.infoCard}>
                 <h3 className={styles.infoTitle}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                   Hours & Appointments
                 </h3>
                 <div className={styles.hoursGrid}>
@@ -151,7 +151,7 @@ export default function ContactPage() {
               {/* Contact Details */}
               <div className={styles.infoCard}>
                 <h3 className={styles.infoTitle}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                   Get In Touch
                 </h3>
                 <div className={styles.contactDetails}>
@@ -168,11 +168,11 @@ export default function ContactPage() {
               {/* Location Details */}
               <div className={styles.infoCard}>
                 <h3 className={styles.infoTitle}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                   Visit Us
                 </h3>
                 <div className={styles.contactDetails}>
-                  <div className={styles.contactItem} style={{textDecoration: 'none'}}>
+                  <div className={styles.contactItem} style={{ textDecoration: 'none' }}>
                     <span className={styles.contactLabel}>Location</span>
                     <span className={styles.contactValue}>Abidjan, Côte d'Ivoire (UTC+0)</span>
                   </div>

@@ -16,7 +16,7 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,14 +49,14 @@
 
 .logoTitle {
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
 .logoSub {
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--accent-primary);
   letter-spacing: 0.02em;
 }
@@ -74,8 +74,8 @@
 
 .navLink {
   position: relative;
-  padding: 8px 10px;
-  font-size: 0.85rem;
+  padding: 6px 8px;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
@@ -129,9 +129,9 @@
   border: none;
   background: transparent;
   padding: 8px 16px 8px 36px;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--text-primary);
-  width: 140px;
+  width: 120px;
   outline: none;
   transition: width 0.3s ease;
 }
@@ -203,7 +203,7 @@
   display: none;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
   .hamburger {
     display: flex;
   }

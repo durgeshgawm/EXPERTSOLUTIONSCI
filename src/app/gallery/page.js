@@ -71,10 +71,7 @@ export default function GalleryPage() {
                     className={styles.galleryImage} 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className={styles.galleryOverlay}>
-                    <h3 className={styles.galleryTitle}>{image.title}</h3>
-                    <span className={styles.galleryCategory}>{image.category}</span>
-                  </div>
+
                 </div>
               </div>
             ))}
@@ -98,7 +95,7 @@ export default function GalleryPage() {
                 sizes="100vw"
               />
             </div>
-            <h3 className={styles.lightboxTitle}>{selectedImage.title}</h3>
+
           </div>
         </div>
       )}
