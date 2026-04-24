@@ -1,8 +1,20 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/home.module.css';
+
+const heroImages = [
+  '/Home_slide/Main_page_img_1.jpeg',
+  '/Home_slide/2.jpeg',
+  '/Home_slide/3.jpeg',
+  '/Home_slide/4.jpeg',
+  '/Home_slide/5.jpeg',
+  '/Home_slide/6.jpeg',
+  '/Home_slide/7.jpeg',
+  '/Home_slide/8.jpeg',
+  '/Home_slide/9.jpeg'
+];
 
 const whyChooseUs = [
   {
@@ -61,6 +73,15 @@ const stats = [
 
 export default function HomePage() {
   const heroRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,7 +106,13 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroBackground}>
-          <div className={styles.heroBackgroundImage} />
+          {heroImages.map((src, index) => (
+            <div
+              key={index}
+              className={`${styles.heroBackgroundImage} ${index === currentImageIndex ? styles.active : ''}`}
+              style={{ backgroundImage: `url('${src}')` }}
+            />
+          ))}
           <div className={styles.heroOverlay} />
         </div>
         <div className={styles.heroContent}>

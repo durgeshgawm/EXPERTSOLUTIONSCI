@@ -12,6 +12,9 @@ const partners = [
   { image: '/Partner_photo/Vega Industries.jpeg', title: 'Vega Industries', desc: 'Valued strategic partner' },
   { image: '/Partner_photo/thermax.png', title: 'Thermax', desc: 'Valued strategic partner' },
   { image: '/Partner_photo/Spannkraft.jpeg', title: 'Spannkraft', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/asian_paint.jpeg', title: 'Asian Paint', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/mailam.jpeg', title: 'Mailam', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/perfect.jpeg', title: 'Perfect', desc: 'Valued strategic partner' },
 ];
 
 const whyChooseUs = [

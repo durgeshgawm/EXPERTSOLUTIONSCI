@@ -11,7 +11,7 @@ const products = [
   { image: '/assets/For Grinding media and liners.jpeg', title: 'Grinding Media and Liners', desc: 'High quality grinding media and liners.' },
   { image: '/assets/Paint.jpeg', title: 'Paints - ABP', desc: 'Industrial paints and coatings.' },
   { image: '/assets/Electrical.jpeg', title: 'Electrical', desc: 'Electrical components and supplies.' },
-  { image: '/assets/Insulation.jpeg', title: 'Insulation', desc: 'Thermal and acoustic insulation materials.' },
+  { image: '/assets/abc.jpeg', title: 'Insulation', desc: 'Thermal and acoustic insulation materials.' },
   { image: '/assets/Belts.jpeg', title: 'Belts', desc: 'Industrial transmission and conveyor belts.' },
   { image: '/assets/Antiwear Solutions.jpeg', title: 'Antiwear Solutions', desc: 'Advanced wear protection solutions.' },
   { image: '/assets/Industrial Spare parts.jpeg', title: 'Industrial Spare parts', desc: 'Wide range of industrial spare parts.' },
@@ -66,7 +66,7 @@ export default async function ServicesPage({ searchParams }) {
               {searchQuery ? `Product search results for "${resolvedParams.q}"` : 'High-quality industrial products and supplies.'}
             </p>
           </div>
-          
+
           {filteredProducts.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '20px 0', color: 'var(--text-secondary)' }}>
               <p>No products found matching your search.</p>
@@ -76,19 +76,19 @@ export default async function ServicesPage({ searchParams }) {
               {filteredProducts.map((product, index) => (
                 <div key={index} className={styles.productCard}>
                   <div className={styles.cardImageContainer}>
-                    <Image 
-                      src={product.image} 
-                      alt={product.title} 
-                      width={400} 
-                      height={300} 
-                      className={styles.cardImage} 
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      width={400}
+                      height={300}
+                      className={styles.cardImage}
                     />
                   </div>
                   <div className={styles.cardContent}>
                     <h3 className={styles.serviceTitle}>{product.title}</h3>
                     <p className={styles.serviceDesc}>{product.desc}</p>
                   </div>
-                  <div className={styles.serviceCardGlow}/>
+                  <div className={styles.serviceCardGlow} />
                 </div>
               ))}
             </div>
@@ -104,7 +104,7 @@ export default async function ServicesPage({ searchParams }) {
               {searchQuery ? `Service search results for "${resolvedParams.q}"` : 'Comprehensive industrial and engineering solutions.'}
             </p>
           </div>
-          
+
           {filteredServices.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '20px 0', color: 'var(--text-secondary)' }}>
               <p>No services found matching your search.</p>
@@ -116,7 +116,7 @@ export default async function ServicesPage({ searchParams }) {
                   <div className={styles.serviceIcon}>{service.icon}</div>
                   <h3 className={styles.serviceTitle}>{service.title}</h3>
                   <p className={styles.serviceDesc}>{service.desc}</p>
-                  <div className={styles.serviceCardGlow}/>
+                  <div className={styles.serviceCardGlow} />
                 </div>
               ))}
             </div>
