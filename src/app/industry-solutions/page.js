@@ -5,12 +5,13 @@ export const metadata = {
   description: 'Industry-specific solutions for cement, mining, power generation, food processing, and more.',
 };
 
+import Image from 'next/image';
+
 const industries = [
-  { icon: '🏭', name: 'Cement Industry', services: ['Industrial Installation', 'Mechanical maintenance', 'Wear solutions', 'Dust emission curbing', 'Production optimization'] },
-  { icon: '⛏️', name: 'Mining Industry', services: ['Mechanical maintenance', 'Welding services', 'Repair and modernization', 'Process optimization', 'Quality control'] },
-  { icon: '🌱', name: 'Agri-Agro', services: ['Electrical maintenance', 'Energy audits', 'Energy optimization', 'Process enhancement', 'Industrial Installation'] },
-  { icon: '🚗', name: 'Automobiles', services: ['Quality control', 'Process optimization', 'Environment protection', 'Mechanical maintenance', 'In-situ services'] },
-  { icon: '🚢', name: 'Ports', services: ['Welding services', 'Mechanical maintenance', 'Repair and modernization', 'Prompt services', 'In-situ services'] },
+  { image: '/assets/Cement Industry.jpeg', icon: '🏭', name: 'Cement Industry', services: ['Industrial Installation', 'Mechanical maintenance', 'Wear solutions', 'Dust emission curbing', 'Production optimization'] },
+  { image: '/assets/Mining Industry.jpeg', icon: '⛏️', name: 'Mining Industry', services: ['Mechanical maintenance', 'Welding services', 'Repair and modernization', 'Process optimization', 'Quality control'] },
+  { image: '/assets/Agri-Agro.jpeg', icon: '🌱', name: 'Agri-Agro', services: ['Electrical maintenance', 'Energy audits', 'Energy optimization', 'Process enhancement', 'Industrial Installation'] },
+  { image: '/assets/Ports.jpeg', icon: '🚢', name: 'Ports', services: ['Welding services', 'Mechanical maintenance', 'Repair and modernization', 'Prompt services', 'In-situ services'] },
 ];
 
 const allServices = [
@@ -47,20 +48,31 @@ export default function IndustrySolutionsPage() {
           <div className={styles.industryGrid}>
             {industries.map((industry, index) => (
               <div key={index} className={styles.industryCard}>
-                <div className={styles.industryHeader}>
-                  <span className={styles.industryIcon}>{industry.icon}</span>
-                  <h3 className={styles.industryName}>{industry.name}</h3>
+                <div className={styles.cardImageContainer}>
+                  <Image 
+                    src={industry.image} 
+                    alt={industry.name} 
+                    width={500} 
+                    height={300} 
+                    className={styles.cardImage} 
+                  />
                 </div>
-                <ul className={styles.industryServices}>
-                  {industry.services.map((service, i) => (
-                    <li key={i} className={styles.industryServiceItem}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.checkIcon}>
-                        <polyline points="20 6 9 17 4 12"/>
-                      </svg>
-                      {service}
-                    </li>
-                  ))}
-                </ul>
+                <div className={styles.cardContent}>
+                  <div className={styles.industryHeader}>
+                    <span className={styles.industryIcon}>{industry.icon}</span>
+                    <h3 className={styles.industryName}>{industry.name}</h3>
+                  </div>
+                  <ul className={styles.industryServices}>
+                    {industry.services.map((service, i) => (
+                      <li key={i} className={styles.industryServiceItem}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.checkIcon}>
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>

@@ -3,19 +3,24 @@
 import { useState } from 'react';
 import styles from '@/styles/gallery.module.css';
 
+import Image from 'next/image';
+
 const galleryImages = [
-  { id: 1, title: 'Sag Mill Interior', category: 'products', color: '#0891B2' },
-  { id: 2, title: 'High-Vis Team Photos', category: 'team', color: '#0E7490' },
-  { id: 3, title: 'Rebar & Pipe Inventory', category: 'products', color: '#155E75' },
-  { id: 4, title: 'Loader Buckets', category: 'products', color: '#164E63' },
-  { id: 5, title: 'Wear Plates', category: 'products', color: '#083344' },
-  { id: 6, title: 'Shipping Containers (Piping)', category: 'products', color: '#0891B2' },
-  { id: 7, title: 'Metal Components', category: 'products', color: '#0E7490' },
-  { id: 8, title: 'Installation of Refractory Castable', category: 'services', color: '#155E75' },
-  { id: 9, title: 'Furnace Interior Work', category: 'services', color: '#164E63' },
-  { id: 10, title: 'Welding Electrodes (CUTARC)', category: 'products', color: '#083344' },
-  { id: 11, title: 'Large Industrial Coils', category: 'products', color: '#0891B2' },
-  { id: 12, title: 'Cyanide Tank Insulation', category: 'services', color: '#0E7490' },
+  { id: 1, title: 'Gallery Image 1', category: 'products', src: '/Photo_gallery/1 (1).jpeg' },
+  { id: 2, title: 'Gallery Image 2', category: 'team', src: '/Photo_gallery/1 (1).jpg' },
+  { id: 3, title: 'Gallery Image 3', category: 'products', src: '/Photo_gallery/1 (2).jpeg' },
+  { id: 4, title: 'Gallery Image 4', category: 'services', src: '/Photo_gallery/1 (2).jpg' },
+  { id: 5, title: 'Gallery Image 5', category: 'products', src: '/Photo_gallery/1 (3).jpeg' },
+  { id: 6, title: 'Gallery Image 6', category: 'team', src: '/Photo_gallery/1 (3).jpg' },
+  { id: 7, title: 'Gallery Image 7', category: 'products', src: '/Photo_gallery/1 (4).jpeg' },
+  { id: 8, title: 'Gallery Image 8', category: 'services', src: '/Photo_gallery/1 (4).jpg' },
+  { id: 9, title: 'Gallery Image 9', category: 'products', src: '/Photo_gallery/1 (5).jpeg' },
+  { id: 10, title: 'Gallery Image 10', category: 'team', src: '/Photo_gallery/1 (5).jpg' },
+  { id: 11, title: 'Gallery Image 11', category: 'products', src: '/Photo_gallery/1 (6).jpeg' },
+  { id: 12, title: 'Gallery Image 12', category: 'services', src: '/Photo_gallery/1 (6).jpg' },
+  { id: 13, title: 'Gallery Image 13', category: 'products', src: '/Photo_gallery/1 (7).jpeg' },
+  { id: 14, title: 'Gallery Image 14', category: 'team', src: '/Photo_gallery/1 (7).jpg' },
+  { id: 15, title: 'Gallery Image 15', category: 'services', src: '/Photo_gallery/1 (8).jpeg' },
 ];
 
 const categories = ['all', 'team', 'services', 'products'];
@@ -58,17 +63,14 @@ export default function GalleryPage() {
                 className={styles.galleryItem}
                 onClick={() => setSelectedImage(image)}
               >
-                <div
-                  className={styles.galleryImagePlaceholder}
-                  style={{ background: `linear-gradient(135deg, ${image.color}, ${image.color}88)` }}
-                >
-                  <div className={styles.galleryImageIcon}>
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                      <circle cx="8.5" cy="8.5" r="1.5"/>
-                      <polyline points="21 15 16 10 5 21"/>
-                    </svg>
-                  </div>
+                <div className={styles.galleryImagePlaceholder}>
+                  <Image 
+                    src={image.src} 
+                    alt={image.title} 
+                    fill 
+                    className={styles.galleryImage} 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                   <div className={styles.galleryOverlay}>
                     <h3 className={styles.galleryTitle}>{image.title}</h3>
                     <span className={styles.galleryCategory}>{image.category}</span>
@@ -87,15 +89,14 @@ export default function GalleryPage() {
             <button className={styles.lightboxClose} onClick={() => setSelectedImage(null)}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
-            <div
-              className={styles.lightboxImage}
-              style={{ background: `linear-gradient(135deg, ${selectedImage.color}, ${selectedImage.color}88)` }}
-            >
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
+            <div className={styles.lightboxImage}>
+              <Image 
+                src={selectedImage.src} 
+                alt={selectedImage.title} 
+                fill 
+                className={styles.lightboxImg} 
+                sizes="100vw"
+              />
             </div>
             <h3 className={styles.lightboxTitle}>{selectedImage.title}</h3>
           </div>

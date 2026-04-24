@@ -5,14 +5,13 @@ export const metadata = {
   description: 'Our trusted partners and the comprehensive services we offer together.',
 };
 
+import Image from 'next/image';
+
 const partners = [
-  { icon: '🏢', title: 'HAPBCO', desc: 'Valued strategic partner' },
-  { icon: '🏭', title: 'Vega Industries', desc: 'Valued strategic partner' },
-  { icon: '🔧', title: 'Thermax', desc: 'Valued strategic partner' },
-  { icon: '⚙️', title: 'Spannkraft', desc: 'Valued strategic partner' },
-  { icon: '🤝', title: 'Mailam', desc: 'Valued strategic partner' },
-  { icon: '🏗️', title: 'Welter/NPM', desc: 'Valued strategic partner' },
-  { icon: '📦', title: 'APB', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/HAPBCO.jpeg', title: 'HAPBCO', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/Vega Industries.jpeg', title: 'Vega Industries', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/thermax.png', title: 'Thermax', desc: 'Valued strategic partner' },
+  { image: '/Partner_photo/Spannkraft.jpeg', title: 'Spannkraft', desc: 'Valued strategic partner' },
 ];
 
 const whyChooseUs = [
@@ -71,13 +70,23 @@ export default function PartnersPage() {
           </div>
           <div className={styles.partnersGrid} style={{ marginBottom: '64px' }}>
             {partners.map((partner, index) => (
-              <div key={index} className={styles.partnerCard}>
-                <div className={styles.partnerCardHeader}>
-                  <span className={styles.partnerIcon}>{partner.icon}</span>
-                  <span className={styles.partnerNumber}>0{index + 1}</span>
+              <div key={index} className={styles.partnerCompanyCard}>
+                <div className={styles.partnerImageContainer}>
+                  <Image 
+                    src={partner.image} 
+                    alt={partner.title} 
+                    width={200} 
+                    height={100} 
+                    className={styles.partnerImage} 
+                  />
                 </div>
-                <h3 className={styles.partnerTitle}>{partner.title}</h3>
-                <p className={styles.partnerDesc}>{partner.desc}</p>
+                <div className={styles.partnerCompanyCardContent}>
+                  <div className={styles.partnerCardHeader}>
+                    <h3 className={styles.partnerTitle} style={{ marginBottom: 0 }}>{partner.title}</h3>
+                    <span className={styles.partnerNumber}>0{index + 1}</span>
+                  </div>
+                  <p className={styles.partnerDesc}>{partner.desc}</p>
+                </div>
                 <div className={styles.partnerCardLine}/>
               </div>
             ))}

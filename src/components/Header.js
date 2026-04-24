@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
 import styles from '@/styles/header.module.css';
 
 const navLinks = [
@@ -85,7 +86,7 @@ export default function Header() {
               <div className={styles.searchContainer}>
                 <input
                   type="text"
-                  placeholder="Search services..."
+                  placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={styles.searchInput}
@@ -107,7 +108,7 @@ export default function Header() {
               <div className={styles.searchContainer}>
                 <input
                   type="text"
-                  placeholder="Search services..."
+                  placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={styles.searchInput}
@@ -121,6 +122,8 @@ export default function Header() {
               </div>
             </form>
           </div>
+          <div id="google_translate_element" style={{ display: 'none' }}></div>
+          <LanguageToggle />
           <ThemeToggle />
           <button
             className={`${styles.hamburger} ${isMobileMenuOpen ? styles.hamburgerOpen : ''}`}

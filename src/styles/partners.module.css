@@ -25,6 +25,69 @@
   box-shadow: var(--shadow-sm);
 }
 
+.partnerCompanyCard {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.partnerCompanyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.partnerImageContainer {
+  width: 100%;
+  height: 160px;
+  background: #ffffff; /* White background for logos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 24px;
+}
+
+.partnerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.partnerCompanyCard:hover .partnerImage {
+  transform: scale(1.05);
+}
+
+.partnerCompanyCardContent {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.partnerCompanyCard .partnerCardLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.partnerCompanyCard:hover .partnerCardLine {
+  transform: scaleX(1);
+}
+
 .partnerCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);

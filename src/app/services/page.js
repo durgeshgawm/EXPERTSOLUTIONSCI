@@ -5,18 +5,20 @@ export const metadata = {
   description: 'Explore our comprehensive range of industrial services including industrial installation, energy audits, maintenance, and more.',
 };
 
+import Image from 'next/image';
+
 const products = [
-  { icon: '🌐', title: 'Grinding Media and Liners', desc: 'High quality grinding media and liners.' },
-  { icon: '🎨', title: 'Paints - ABP', desc: 'Industrial paints and coatings.' },
-  { icon: '⚡', title: 'Electrical', desc: 'Electrical components and supplies.' },
-  { icon: '🔥', title: 'Insulation', desc: 'Thermal and acoustic insulation materials.' },
-  { icon: '⛓️', title: 'Belts', desc: 'Industrial transmission and conveyor belts.' },
-  { icon: '🛡️', title: 'Antiwear Solutions', desc: 'Advanced wear protection solutions.' },
-  { icon: '🔧', title: 'Industrial Spare parts', desc: 'Wide range of industrial spare parts.' },
-  { icon: '💧', title: 'Hydraulic Solutions', desc: 'Hydraulic systems and components.' },
-  { icon: '⚙️', title: 'Gearbox Spare parts', desc: 'Replacement parts for industrial gearboxes.' },
-  { icon: '🏭', title: 'Pollution control Equipment', desc: 'Equipment for environmental compliance.' },
-  { icon: '♨️', title: 'Process Boilers', desc: 'Industrial process boilers and systems.' },
+  { image: '/assets/For Grinding media and liners.jpeg', title: 'Grinding Media and Liners', desc: 'High quality grinding media and liners.' },
+  { image: '/assets/Paint.jpeg', title: 'Paints - ABP', desc: 'Industrial paints and coatings.' },
+  { image: '/assets/Electrical.jpeg', title: 'Electrical', desc: 'Electrical components and supplies.' },
+  { image: '/assets/Insulation.jpeg', title: 'Insulation', desc: 'Thermal and acoustic insulation materials.' },
+  { image: '/assets/Belts.jpeg', title: 'Belts', desc: 'Industrial transmission and conveyor belts.' },
+  { image: '/assets/Antiwear Solutions.jpeg', title: 'Antiwear Solutions', desc: 'Advanced wear protection solutions.' },
+  { image: '/assets/Industrial Spare parts.jpeg', title: 'Industrial Spare parts', desc: 'Wide range of industrial spare parts.' },
+  { image: '/assets/Hydraulic Solutions.jpeg', title: 'Hydraulic Solutions', desc: 'Hydraulic systems and components.' },
+  { image: '/assets/Gearbox Spare parts.jpeg', title: 'Gearbox Spare parts', desc: 'Replacement parts for industrial gearboxes.' },
+  { image: '/assets/Pollution control Equipment.jpeg', title: 'Pollution control Equipment', desc: 'Equipment for environmental compliance.' },
+  { image: '/assets/Process Boilers.jpeg', title: 'Process Boilers', desc: 'Industrial process boilers and systems.' },
 ];
 
 const services = [
@@ -72,10 +74,20 @@ export default async function ServicesPage({ searchParams }) {
           ) : (
             <div className={styles.servicesGrid}>
               {filteredProducts.map((product, index) => (
-                <div key={index} className={styles.serviceCard}>
-                  <div className={styles.serviceIcon}>{product.icon}</div>
-                  <h3 className={styles.serviceTitle}>{product.title}</h3>
-                  <p className={styles.serviceDesc}>{product.desc}</p>
+                <div key={index} className={styles.productCard}>
+                  <div className={styles.cardImageContainer}>
+                    <Image 
+                      src={product.image} 
+                      alt={product.title} 
+                      width={400} 
+                      height={300} 
+                      className={styles.cardImage} 
+                    />
+                  </div>
+                  <div className={styles.cardContent}>
+                    <h3 className={styles.serviceTitle}>{product.title}</h3>
+                    <p className={styles.serviceDesc}>{product.desc}</p>
+                  </div>
                   <div className={styles.serviceCardGlow}/>
                 </div>
               ))}

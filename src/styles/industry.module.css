@@ -18,15 +18,43 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 32px;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .industryCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--accent-primary);
+}
+
+.cardImageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.industryCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .industryHeader {
@@ -108,7 +136,7 @@
     grid-template-columns: 1fr;
   }
 
-  .industryCard {
+  .cardContent {
     padding: 24px;
   }
 
