@@ -31,15 +31,10 @@ export default function Footer() {
           <h2 className={styles.sectionTitle}>OUR OFFICES AROUND THE WORLD</h2>
           
           <div className={styles.worldMap} style={{ marginTop: '32px', marginBottom: '48px' }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508473.26604433521!2d-3.979665!3d5.348461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sen!2s!4v1"
-              width="100%"
-              height="350"
-              style={{ border: 0, borderRadius: 'var(--radius-lg)' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Expert Solutions CI - Abidjan, Côte d'Ivoire"
+            <img
+              src="/Map_image.jpeg"
+              alt="Expert Solutions CI Locations Map"
+              style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)' }}
             />
           </div>
 

@@ -110,7 +110,11 @@ export default function HomePage() {
             <div
               key={index}
               className={`${styles.heroBackgroundImage} ${index === currentImageIndex ? styles.active : ''}`}
-              style={{ backgroundImage: `url('${src}')` }}
+              style={{
+                backgroundImage: `url('${src}')`,
+                backgroundSize: src.includes('6.jpeg') ? 'contain' : 'cover',
+                backgroundRepeat: src.includes('6.jpeg') ? 'no-repeat' : 'initial'
+              }}
             />
           ))}
           <div className={styles.heroOverlay} />
